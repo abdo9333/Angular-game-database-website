@@ -3,6 +3,8 @@
     <mat-label>Sort</mat-label>
     <mat-select
       panelClass="sort-select"
+      [(ngModel)]="sorting"
+      (selectionChange)="searchGames(sorting)"
     >
       <mat-option value="name">Name</mat-option>
       <mat-option value="-released">Released</mat-option>
