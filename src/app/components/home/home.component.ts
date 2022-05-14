@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Game } from 'src/app/model';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,10 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 export class HomeComponent implements OnInit {
 
   public sorting!: string;
-  public games!: Array<Game>
+  public games!: Array<Game>;
+
+  gamrSub = Subscription;
+  routSub = Subscription;
 
   constructor(
     private httpService: HttpService,
@@ -38,6 +42,14 @@ export class HomeComponent implements OnInit {
       console.log(gamelist);
     })
 
+  }
+
+  ngOndestroy(){
+
+  }
+
+  openDetails(id : string) : void{
+    this.router.navigate(['datails', id]);
   }
 
 }
