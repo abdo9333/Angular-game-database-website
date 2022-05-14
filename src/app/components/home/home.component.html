@@ -36,9 +36,9 @@
            *ngFor="let gamePlatform of game.parent_platforms"
             class="game-platform"
 
-            src="assets/images/platforms/{{ gamePlatform.platform.slug | lowercase  }}.svg"
+            src="assets/images/platforms/{{ gamePlatform.platform.name| lowercase  }}.svg"
 
-            alt="{{ gamePlatform.platform.slug }}"
+            alt="{{ gamePlatform.platform.name }}"
           />
         </div>
       </div>

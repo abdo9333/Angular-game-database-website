@@ -1,4 +1,5 @@
-export interface Game{
+export interface Game {
+  id : string;
   background_image: string;
   name: string;
   released: string;
@@ -12,39 +13,38 @@ export interface Game{
   ratings: Array<Rating>;
   screenshots: Array<Screenshots>;
   trailers: Array<Trailer>;
-  id: string;
 }
+
 export interface APIResponse<T> {
-  results: Array<T>;
+    results: Array<T>;
 }
 
 interface Genre {
-name: string;
+  name: string;
 }
 
 interface ParentPlatform {
-platform: {
-  slug: string;
-};
-
+  platform: {
+    name: string;
+  };
 }
 
 interface Publishers {
-name: string;
+  name: string;
 }
 
 interface Rating {
-id: number;
-count: number;
-title: string;
+  id: number;
+  count: number;
+  title: string;
 }
 
 interface Screenshots {
-image: string;
+  image: string;
 }
 
 interface Trailer {
-data: {
-  max: string;
-};
+  data: {
+    max: string;
+  };
 }

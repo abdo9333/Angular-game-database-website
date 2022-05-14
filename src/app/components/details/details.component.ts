@@ -34,6 +34,7 @@ export class DetailsComponent implements OnInit , OnDestroy {
   getGameDetails(id : string) : void{
     this.gameSub = this.httpService.getGamesDetails(id).subscribe((gameRes : Game)=>{
       this.game = gameRes;
+      console.log('it show : ' + this.game.background_image);
       setTimeout(()=>{
         this.gameRating = this.game.metacritic;
       })
@@ -54,12 +55,12 @@ export class DetailsComponent implements OnInit , OnDestroy {
   }
 
   ngOnDestroy(): void {
-      if (this.routeSub){
+    /*  if (this.routeSub){
         this.routeSub.unsubscribe();
       }
       if(this.gameSub){
         this.gameSub.unsubscribe()
-      }
+      }*/
   }
 
 }
