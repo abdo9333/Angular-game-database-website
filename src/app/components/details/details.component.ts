@@ -55,12 +55,12 @@ export class DetailsComponent implements OnInit , OnDestroy {
   }
 
   ngOnDestroy(): void {
-    /*  if (this.routeSub){
+      if (this.routeSub){
         this.routeSub.unsubscribe();
       }
       if(this.gameSub){
         this.gameSub.unsubscribe()
-      }*/
+      }
   }
 
 }
